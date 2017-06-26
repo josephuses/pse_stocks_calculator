@@ -1,2 +1,1 @@
-# pse_stocks_calculator
-# pse_stocks_calculator
+This is the source for the shiny app https://jtabadero.shinyapps.io/stocks_comp/.
