@@ -15,6 +15,7 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
+      textInput("stock", "Stock",  "MRC"),
       numericInput("buy_vol", "Buy Volume", value = "100", min = 0),
       numericInput("buy_price", "Buy Price", value = "100.00", min = 0),
       numericInput("sell_vol", "Sale Volume", value = NULL, min = 0),
@@ -28,12 +29,10 @@ shinyUI(fluidPage(
 
     # Show a plot of the generated distribution
     mainPanel(
-      helpText(h2("Instructions"),
-               p("This is a stock calculator based on the Philippine Stocks Exchange. Type the buying volume, sale volume, buying price, and sale price in their corresponding boxes in the side panel. The", strong("computations"), "will automatically appear in the 'Calculations' section."),
-               br(),
-               h2("Calculations"),
+      h2("Instructions"),
+      p("This is a stock calculator based on the Philippine Stocks Exchange. Type the buying volume, sale volume, buying price, and sale price in their corresponding boxes in the side panel. The", strong("computations"), "will automatically appear below."),
+      h2(textOutput("caption", container = span)),
       tableOutput("table")
-      )
     )
   )
 ))
